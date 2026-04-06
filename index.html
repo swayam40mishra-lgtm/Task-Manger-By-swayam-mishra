@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RenuVerse — A Universe Built For One Person</title>
+  <title>RenuVerse — A Universe Built for One Person</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,62 +13,62 @@
 </head>
 <body>
 
-  <!-- 🌌 INTRO SCREEN -->
+  <!-- 🌌 BACKGROUND ORBS -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+  <div class="stars"></div>
+
+  <!-- 🎬 INTRO SCREEN -->
   <section id="introScreen" class="screen active">
-    <div class="stars"></div>
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-
-    <div class="intro-box">
-      <p class="intro-line reveal delay-1">The website was only the beginning…</p>
-      <p class="intro-line reveal delay-2">Welcome to something deeper.</p>
-      <h1 class="brand reveal delay-3">RenuVerse</h1>
-      <p class="tagline reveal delay-4">A universe built around one person.</p>
-
-      <button id="enterUniverseBtn" class="main-btn reveal delay-5">Enter the Universe</button>
-
-      <p class="credit intro-credit reveal delay-5">Designed by <span>Swayam</span></p>
+    <div class="intro-card">
+      <span class="intro-tag">A Hidden Chapter</span>
+      <h1>RenuVerse</h1>
+      <p class="intro-line">The website was only the beginning…</p>
+      <p class="intro-line">This time, you don’t just read.</p>
+      <p class="intro-line">This time, you can ask.</p>
+      <p class="intro-sub">A universe built around one special person.</p>
+      <button id="enterUniverseBtn" class="primary-btn">Enter the Universe</button>
+      <p class="credit">Designed by <span>Swayam</span></p>
     </div>
   </section>
 
-  <!-- ⚡ BOOT SCREEN -->
-  <section id="bootScreen" class="screen hidden">
-    <div class="boot-wrap">
-      <h2 class="boot-title">Initializing RenuVerse...</h2>
-      <div class="boot-console" id="bootConsole"></div>
+  <!-- ⚙️ BOOT SCREEN -->
+  <section id="bootScreen" class="screen">
+    <div class="boot-box">
+      <h2>Initializing RenuVerse…</h2>
+      <div id="bootLines" class="boot-lines"></div>
     </div>
   </section>
 
   <!-- 💬 CHAT SCREEN -->
-  <section id="chatScreen" class="screen hidden">
-    <div class="chat-bg-stars"></div>
-
+  <section id="chatScreen" class="screen">
     <div class="chat-shell">
-      <header class="chat-header">
-        <div class="header-left">
-          <div class="orb"></div>
+
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="brand-wrap">
+          <div class="brand-dot"></div>
           <div>
-            <h1>RenuVerse</h1>
+            <h2>RenuVerse</h2>
             <p>A chatbot made only for you</p>
           </div>
         </div>
 
-        <div class="header-right">
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            Active
-          </div>
+        <div class="status-wrap">
+          <div class="status-pill" id="connectionLevel">Connection: Noticed</div>
         </div>
       </header>
 
-      <div class="unlock-banner hidden" id="unlockBanner">
+      <!-- Unlock Banner -->
+      <div id="unlockBanner" class="unlock-banner hidden">
         ✨ Hidden Chapter Unlocked — Try asking: <strong>One last message</strong>
       </div>
 
-      <div class="chat-body" id="chatBody">
-        <!-- messages injected by JS -->
-      </div>
+      <!-- Chat Area -->
+      <main id="chatMessages" class="chat-messages"></main>
 
+      <!-- Suggestion Chips -->
       <div class="chips-wrap" id="chipsWrap">
         <button class="chip">How did it all begin?</button>
         <button class="chip">What makes me special?</button>
@@ -78,27 +78,30 @@
         <button class="chip">One last message</button>
       </div>
 
-      <div class="chat-input-bar" id="chatInputBar">
+      <!-- Input -->
+      <div class="input-wrap" id="inputWrap">
         <input
           type="text"
           id="userInput"
-          placeholder="Ask RenuVerse something from the heart..."
+          placeholder="Ask RenuVerse anything..."
           autocomplete="off"
         />
         <button id="sendBtn" class="send-btn">Send</button>
       </div>
 
-      <p class="footer-credit">
-        Designed by <span>Swayam</span>
-      </p>
+      <!-- Footer Credit -->
+      <div class="bottom-credit">
+        Crafted with heart • Designed by <span>Swayam</span>
+      </div>
+
     </div>
   </section>
 
-  <!-- 🌠 FINAL OVERLAY -->
+  <!-- 🌙 FINAL OVERLAY -->
   <div id="finalOverlay" class="final-overlay hidden">
-    <div class="final-content">
+    <div class="final-overlay-content">
       <div id="finalLines" class="final-lines"></div>
-      <button id="returnToChatBtn" class="main-btn final-btn hidden">Return to RenuVerse</button>
+      <button id="backToChatBtn" class="secondary-btn">Return to RenuVerse</button>
     </div>
   </div>
 
