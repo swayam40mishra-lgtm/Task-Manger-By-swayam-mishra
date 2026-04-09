@@ -3,538 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RenuVerse | A Private Universe</title>
-  <meta name="description" content="A private universe built for one rare bond." />
+  <title>This Was Never A Class Project</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- =========================
-       LOADER / ENTRY SCREEN
-  ========================== -->
-  <div id="loader" class="loader-screen">
-    <div class="loader-content">
-      <h1 class="loader-title">RenuVerse</h1>
-      <p class="loader-subtitle">A private universe built for one rare bond.</p>
-      <button id="enterSiteBtn" class="primary-btn">Enter the Universe</button>
+  <!-- Background Glow -->
+  <div class="bg-glow"></div>
+
+  <!-- Screen 1: Fake Project Home -->
+  <section class="screen active" id="screen1">
+    <div class="card academic-card">
+      <p class="tag">ACADEMIC PRESENTATION PORTAL</p>
+      <h1>MY CLASS 11 PROJECT</h1>
+      <p class="subtitle">A small academic presentation</p>
+      <p class="byline">By <span>Swayam Mishra</span> | Class 11-A</p>
+      <button class="btn primary" onclick="goToScreen(2)">Open Project</button>
     </div>
-  </div>
+  </section>
 
-  <!-- =========================
-       MAIN APP
-  ========================== -->
-  <div id="app" class="app hidden">
-
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-    <header class="navbar">
-      <div class="nav-container">
-        <div class="brand">
-          <h2>RenuVerse</h2>
-          <span class="brand-tag">Private Bond Platform</span>
-        </div>
-
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <nav class="nav-links" id="navLinks">
-          <a href="#home">Home</a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#profile">Profile</a>
-          <a href="#memories">Memories</a>
-          <a href="#analytics">Analytics</a>
-          <a href="#ai">RenuVerse AI</a>
-          <a href="#vault">Secret Vault</a>
-        </nav>
+  <!-- Screen 2: Loading -->
+  <section class="screen" id="screen2">
+    <div class="card loading-card">
+      <h2>System Initializing...</h2>
+      <div class="terminal" id="terminalText">
+        <p>Initializing project...</p>
+        <p>Loading academic module...</p>
+        <p>Preparing class content...</p>
       </div>
-    </header>
 
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
-    <section id="home" class="section hero-section">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="eyebrow">Private Digital Universe</p>
-          <h1 class="hero-title">
-            Not just a website. <br />
-            A universe built for <span>Renu Queen</span>.
-          </h1>
-          <p class="hero-description">
-            Not just bhabhi. Not just family. Not just comfort.
-            Something rare. Something real. Something that deserved
-            more than ordinary words.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#dashboard" class="primary-btn">Enter Dashboard</a>
-            <a href="#ai" class="secondary-btn">Open RenuVerse AI</a>
-          </div>
-
-          <div class="hero-status-chips">
-            <span class="chip">Bond Status: Just Fire 🔥</span>
-            <span class="chip">Mode: Queen Active 👑</span>
-            <span class="chip">Connection: Rare</span>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-card">
-            <div class="hero-card-header">
-              <h3>Universe Snapshot</h3>
-              <span class="live-badge">LIVE</span>
-            </div>
-            <div class="hero-card-body">
-              <div class="mini-stat">
-                <p class="mini-label">Trust Depth</p>
-                <h4>Strong</h4>
-              </div>
-              <div class="mini-stat">
-                <p class="mini-label">Comfort Index</p>
-                <h4>Very High</h4>
-              </div>
-              <div class="mini-stat">
-                <p class="mini-label">Bond Rarity</p>
-                <h4>Unmatched</h4>
-              </div>
-              <div class="mini-stat">
-                <p class="mini-label">Queen Energy</p>
-                <h4>Active 👑</h4>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
       </div>
-    </section>
 
-    <!-- =========================
-         DASHBOARD SECTION
-    ========================== -->
-    <section id="dashboard" class="section dashboard-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Main Control Center</p>
-          <h2>RenuVerse Dashboard</h2>
-          <p class="section-subtitle">
-            A living overview of one rare bond — soft, strong, and unforgettable.
+      <p class="loading-status" id="loadingStatus">Please wait...</p>
+    </div>
+  </section>
+
+  <!-- Screen 3: Reveal -->
+  <section class="screen" id="screen3">
+    <div class="card reveal-card">
+      <p class="glitch-text">ERROR: This was never a class project.</p>
+      <div class="type-box">
+        <p id="typedText"></p>
+      </div>
+      <button class="btn secondary hidden" id="revealNextBtn" onclick="goToScreen(4)">Continue</button>
+    </div>
+  </section>
+
+  <!-- Screen 4: Profile -->
+  <section class="screen" id="screen4">
+    <div class="profile-wrapper">
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="avatar-ring">
+            <img src="renu.jpg" alt="Renu Mishra" />
+          </div>
+          <div class="profile-text">
+            <p class="verified">IDENTITY CONFIRMED</p>
+            <h2>Renu Mishra</h2>
+            <p class="role">Assistant Professor at GL Bajaj</p>
+            <p class="status">Official Title: World’s Best Bhabhi 👑</p>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div class="info-box">
+            <h4>Known As</h4>
+            <p>Renu Bhabhi, Renu Ji, Renu Queen</p>
+          </div>
+          <div class="info-box">
+            <h4>Hometown</h4>
+            <p>Tilousa, Banda</p>
+          </div>
+          <div class="info-box">
+            <h4>Favorite Color</h4>
+            <p>Black 🖤</p>
+          </div>
+          <div class="info-box">
+            <h4>Favorite Sip</h4>
+            <p>Sprite 🥤</p>
+          </div>
+          <div class="info-box">
+            <h4>Signature Lines</h4>
+            <p>“Hmm”, “Pagal”, “Arrey”, “Take care”</p>
+          </div>
+          <div class="info-box">
+            <h4>Legendary Line</h4>
+            <p>“So jao abhi chup chap.”</p>
+          </div>
+          <div class="info-box">
+            <h4>Care Level</h4>
+            <p>Infinite ♾️</p>
+          </div>
+          <div class="info-box">
+            <h4>Emotional Distance</h4>
+            <p>0 KM ❤️</p>
+          </div>
+        </div>
+
+        <div class="profile-bottom">
+          <p>
+            Some people stay as conversations.  
+            Some stay as memories.  
+            <span>But very few become a place of comfort.</span>
           </p>
         </div>
 
-        <div class="dashboard-grid">
-
-          <div class="card stat-card">
-            <p class="card-label">Bond Status</p>
-            <h3 id="bondStatus">Just Fire 🔥</h3>
-            <p class="card-note">Official emotional system status: legendary.</p>
-          </div>
-
-          <div class="card stat-card">
-            <p class="card-label">Trust Meter</p>
-            <h3 id="trustMeter">88%</h3>
-            <p class="card-note">Still strong. Still growing. Still wishing for complete truth.</p>
-          </div>
-
-          <div class="card stat-card">
-            <p class="card-label">Comfort Index</p>
-            <h3 id="comfortIndex">Very High</h3>
-            <p class="card-note">One small message can change the whole day.</p>
-          </div>
-
-          <div class="card stat-card">
-            <p class="card-label">Moments Remembered</p>
-            <h3 id="memoryCount">05</h3>
-            <p class="card-note">Every meaningful moment matters here.</p>
-          </div>
-
-          <div class="card wide-card">
-            <p class="card-label">Role Matrix</p>
-            <div class="badge-group">
-              <span class="badge">Friend Energy</span>
-              <span class="badge">Guide Mode</span>
-              <span class="badge">Motherly Care</span>
-              <span class="badge">Safe Place</span>
-              <span class="badge">Queen Aura</span>
-            </div>
-          </div>
-
-          <div class="card wide-card">
-            <p class="card-label">Signature Voice</p>
-            <div class="quote-box" id="signatureVoice">
-              “So jao abhi chup chap.”
-            </div>
-          </div>
-
-          <div class="card wide-card">
-            <p class="card-label">Advice That Stayed</p>
-            <div class="quote-box" id="adviceStayed">
-              “No girls first… career first.”
-            </div>
-          </div>
-
-          <div class="card wide-card">
-            <p class="card-label">Why This Exists</p>
-            <p class="card-note big-note">
-              Because a normal thank-you was never enough.
-            </p>
-          </div>
-
-        </div>
+        <button class="btn primary" onclick="goToScreen(5)">Next Surprise</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- =========================
-         PROFILE SECTION
-    ========================== -->
-    <section id="profile" class="section profile-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Her Identity</p>
-          <h2>Renu Queen Profile</h2>
-          <p class="section-subtitle">
-            A profile built with respect, pride, and heart.
-          </p>
-        </div>
+  <!-- Screen 5: Trailer -->
+  <section class="screen" id="screen5">
+    <div class="card trailer-card">
+      <p class="small-head">TRAILER MODE ACTIVATED</p>
+      <h2>This is not the surprise...</h2>
+      <h1>This is only the trailer.</h1>
 
-        <div class="profile-layout">
-          <div class="card profile-hero-card">
-            <div class="profile-avatar">RM</div>
-            <h3 id="profileName">Renu Mishra</h3>
-            <p class="profile-badge">Renu Queen 👑</p>
-            <p class="profile-tagline">
-              Assistant Professor • Elegant Soul • Trusted Presence
-            </p>
-          </div>
-
-          <div class="profile-info-grid">
-            <div class="card info-card">
-              <p class="card-label">Born</p>
-              <h4>24 Aug 2000</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Roots</p>
-              <h4>Tilousa, Banda</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Profession</p>
-              <h4>Assistant Professor</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Institute</p>
-              <h4>GL Bajaj, Noida</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Joined</p>
-              <h4>Aug 2025</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Favorite Color</p>
-              <h4>Black</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Favorite Sip</p>
-              <h4>Sprite</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Music Mood</p>
-              <h4>Masoom Sharma Vibes</h4>
-            </div>
-
-            <div class="card info-card">
-              <p class="card-label">Married To</p>
-              <h4>Shashank Mishra</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="how-i-see-you">
-          <div class="section-header small">
-            <h3>How I See You</h3>
-          </div>
-
-          <div class="profile-tags-grid">
-            <div class="card mini-card">The Listener</div>
-            <div class="card mini-card">The Guide</div>
-            <div class="card mini-card">The Queen</div>
-            <div class="card mini-card">The Calm Voice</div>
-            <div class="card mini-card">The Safe Presence</div>
-            <div class="card mini-card">More Than Expected</div>
-          </div>
-        </div>
+      <div class="big-statement">
+        <p><span>7 DAYS.</span></p>
+        <p><span>7 UNEXPECTED SURPRISES.</span></p>
+        <p><span>ONLY FOR YOU.</span></p>
       </div>
-    </section>
 
-    <!-- =========================
-         MEMORIES SECTION
-    ========================== -->
-    <section id="memories" class="section memories-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Emotional Archive</p>
-          <h2>Memories Vault</h2>
-          <p class="section-subtitle">
-            Not every memory needs a photo. Some are powerful enough as feelings.
-          </p>
-        </div>
+      <p class="trailer-desc">
+        From today... every evening at exactly <strong>7:00 PM</strong>...  
+        a new surprise will unlock.
+      </p>
 
-        <div class="memories-grid" id="memoriesGrid">
-
-          <div class="card memory-card">
-            <div class="memory-top">
-              <span class="memory-tag">Core Memory</span>
-              <span class="memory-date">19 March</span>
-            </div>
-            <h3>The Hometown Day</h3>
-            <p>
-              The day she went to her hometown, and even a simple conversation
-              felt more special than usual.
-            </p>
-          </div>
-
-          <div class="card memory-card">
-            <div class="memory-top">
-              <span class="memory-tag">Comfort</span>
-              <span class="memory-date">Saved Line</span>
-            </div>
-            <h3>So Jao Mode</h3>
-            <p>
-              “So jao abhi chup chap.” A small line, but it carried care in a way
-              that stayed in the heart.
-            </p>
-          </div>
-
-          <div class="card memory-card">
-            <div class="memory-top">
-              <span class="memory-tag">Guidance</span>
-              <span class="memory-date">Advice</span>
-            </div>
-            <h3>Career First</h3>
-            <p>
-              “No girls first… career first.” Some advice doesn’t just end as words.
-            </p>
-          </div>
-
-          <div class="card memory-card">
-            <div class="memory-top">
-              <span class="memory-tag">Impact</span>
-              <span class="memory-date">Always</span>
-            </div>
-            <h3>Small Reply, Big Effect</h3>
-            <p>
-              Sometimes one simple reply from her changed the mood of the whole day.
-            </p>
-          </div>
-
-        </div>
+      <div class="lock-card">
+        <h3>DAY 1</h3>
+        <p id="dayStatus">LOCKED 🔒</p>
       </div>
-    </section>
 
-    <!-- =========================
-         ANALYTICS SECTION
-    ========================== -->
-    <section id="analytics" class="section analytics-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Emotional Metrics</p>
-          <h2>Bond Analytics</h2>
-          <p class="section-subtitle">
-            When feelings are real enough, even they deserve their own dashboard.
-          </p>
-        </div>
+      <button class="btn secondary" onclick="goToScreen(6)">I'm Ready</button>
+    </div>
+  </section>
 
-        <div class="analytics-grid">
+  <!-- Screen 6: Final -->
+  <section class="screen" id="screen6">
+    <div class="card final-card">
+      <p class="small-head">MISSION: BEST BHABHI</p>
+      <h1>Day 1 begins at 7:00 PM</h1>
+      <p class="dramatic-line">No one was informed.</p>
+      <p class="dramatic-line">No warning was given.</p>
+      <p class="dramatic-line">No escape is possible. 😌</p>
 
-          <div class="card analytics-card">
-            <p class="card-label">Bond Heat Index</p>
-            <h3>97 / 100</h3>
-            <p class="card-note">Official verdict: Our bond is just fire.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Reply Impact Score</p>
-            <h3>High</h3>
-            <p class="card-note">One reply can feel bigger than ten from the world.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Comfort Stability</p>
-            <h3>Stable & Warm</h3>
-            <p class="card-note">Her presence often feels emotionally regulating.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Trust Depth</p>
-            <h3>Strong</h3>
-            <p class="card-note">Built on respect, still wishing for full truth.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Truth Gap</p>
-            <h3>12%</h3>
-            <p class="card-note">Not a complaint. Just the small space where honesty was wished for.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Guidance Value</p>
-            <h3>Very High</h3>
-            <p class="card-note">Her advice stays longer than casual words.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Queen Energy</p>
-            <h3>Active 👑</h3>
-            <p class="card-note">Premium presence detected.</p>
-          </div>
-
-          <div class="card analytics-card">
-            <p class="card-label">Bond Rarity</p>
-            <h3>Rare</h3>
-            <p class="card-note">Not easily defined. Not easily replaced.</p>
-          </div>
-
-        </div>
+      <div class="final-message">
+        <p id="finalTyped"></p>
       </div>
-    </section>
 
-    <!-- =========================
-         RENUVERSE AI SECTION
-    ========================== -->
-    <section id="ai" class="section ai-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Interactive Portal</p>
-          <h2>RenuVerse AI</h2>
-          <p class="section-subtitle">
-            Ask what you want. Some answers are simple. Some are deeper than they look.
-          </p>
-        </div>
+      <p class="credit">
+        Designed by heart for her bhabhi by <span>Swayam</span>
+      </p>
+    </div>
+  </section>
 
-        <div class="ai-layout">
-
-          <!-- Left Panel -->
-          <div class="card ai-sidebar">
-            <h3>Ask Categories</h3>
-
-            <div class="ai-category">
-              <h4>About You</h4>
-              <button class="ai-question-btn">Tell me what you know about me</button>
-              <button class="ai-question-btn">What makes me special?</button>
-              <button class="ai-question-btn">How do you see me?</button>
-            </div>
-
-            <div class="ai-category">
-              <h4>About Me</h4>
-              <button class="ai-question-btn">Why did I build this?</button>
-              <button class="ai-question-btn">What do I feel deeply?</button>
-            </div>
-
-            <div class="ai-category">
-              <h4>Our Bond</h4>
-              <button class="ai-question-btn">What does our bond look like?</button>
-              <button class="ai-question-btn">What place do you hold?</button>
-              <button class="ai-question-btn">Which moment stayed the most?</button>
-            </div>
-
-            <div class="ai-category">
-              <h4>What Stayed Unsaid</h4>
-              <button class="ai-question-btn">What truth remained unfinished?</button>
-              <button class="ai-question-btn">What did you quietly wish from me?</button>
-            </div>
-
-            <div class="ai-category">
-              <h4>Final Unlock</h4>
-              <button class="ai-question-btn locked-btn">Open final message</button>
-            </div>
-          </div>
-
-          <!-- Right Panel -->
-          <div class="card ai-response-panel">
-            <div class="ai-response-header">
-              <h3>Response Window</h3>
-              <span class="ai-status">Awaiting question...</span>
-            </div>
-
-            <div class="ai-response-body" id="aiResponse">
-              <p class="placeholder-text">
-                Select a question from the left and let RenuVerse answer.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         SECRET VAULT SECTION
-    ========================== -->
-    <section id="vault" class="section vault-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-eyebrow">Hidden Layer</p>
-          <h2>Secret Vault</h2>
-          <p class="section-subtitle">
-            Open only if you truly want to know what remained unsaid.
-          </p>
-        </div>
-
-        <div class="vault-layout">
-          <div class="card vault-card">
-            <h3>Hidden Truth Note</h3>
-            <p>
-              Respect never left. Care never left. But somewhere inside,
-              one small wish stayed — if the truth was complete, the trust
-              would have felt even more beautiful.
-            </p>
-            <button class="primary-btn vault-btn">Unlock Deeper Layer</button>
-          </div>
-
-          <div class="card vault-card">
-            <h3>Rare Thoughts</h3>
-            <ul class="vault-list">
-              <li>Some silences stay longer than words.</li>
-              <li>Respect stayed even where clarity didn’t.</li>
-              <li>Some bonds don’t need labels to feel real.</li>
-            </ul>
-          </div>
-
-          <div class="card vault-card final-vault">
-            <h3>Final Honest Line</h3>
-            <p>
-              Not everyone becomes unforgettable.  
-              But you did.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-    <footer class="footer">
-      <div class="container footer-content">
-        <p class="footer-line">
-          Designed by heart for her bhabhi by <span>Swayam</span>
-        </p>
-        <p class="footer-subline">
-          RenuVerse • A private universe built with care, memory, and emotion.
-        </p>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- =========================
-       SCRIPTS
-  ========================== -->
-  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
