@@ -1,166 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>This Was Never A Class Project</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Background Glow -->
-  <div class="bg-glow"></div>
+<!-- 🎬 LANDING -->
+<section class="center" id="landing">
+    <h1>Class 11th Project</h1>
+    <p>Digital Presentation</p>
+    <p>By Swayam Mishra</p>
+    <button onclick="startProject()">Open Project</button>
+</section>
 
-  <!-- Screen 1: Fake Project Home -->
-  <section class="screen active" id="screen1">
-    <div class="card academic-card">
-      <p class="tag">ACADEMIC PRESENTATION PORTAL</p>
-      <h1>MY CLASS 11 PROJECT</h1>
-      <p class="subtitle">A small academic presentation</p>
-      <p class="byline">By <span>Swayam Mishra</span> | Class 11-A</p>
-      <button class="btn primary" onclick="goToScreen(2)">Open Project</button>
-    </div>
-  </section>
+<!-- 🎬 LOADING -->
+<section class="center hidden" id="loading">
+    <h2 id="loadingText">Loading...</h2>
+</section>
 
-  <!-- Screen 2: Loading -->
-  <section class="screen" id="screen2">
-    <div class="card loading-card">
-      <h2>System Initializing...</h2>
-      <div class="terminal" id="terminalText">
-        <p>Initializing project...</p>
-        <p>Loading academic module...</p>
-        <p>Preparing class content...</p>
-      </div>
+<!-- 🎬 ERROR -->
+<section class="center hidden" id="error">
+    <h2 class="glitch">ERROR 404</h2>
+    <p class="glitch">Project Not Found</p>
+    <p class="glitch">System Failure...</p>
 
-      <div class="progress-wrap">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
+    <h3 class="red-text">This was never a project.</h3>
 
-      <p class="loading-status" id="loadingStatus">Please wait...</p>
-    </div>
-  </section>
+    <button onclick="reveal()">Continue</button>
+</section>
 
-  <!-- Screen 3: Reveal -->
-  <section class="screen" id="screen3">
-    <div class="card reveal-card">
-      <p class="glitch-text">ERROR: This was never a class project.</p>
-      <div class="type-box">
-        <p id="typedText"></p>
-      </div>
-      <button class="btn secondary hidden" id="revealNextBtn" onclick="goToScreen(4)">Continue</button>
-    </div>
-  </section>
+<!-- 🎬 MAIN STORY -->
+<main id="main" class="hidden">
 
-  <!-- Screen 4: Profile -->
-  <section class="screen" id="screen4">
-    <div class="profile-wrapper">
-      <div class="profile-card">
-        <div class="profile-top">
-          <div class="avatar-ring">
-            <img src="renu.jpg" alt="Renu Mishra" />
-          </div>
-          <div class="profile-text">
-            <p class="verified">IDENTITY CONFIRMED</p>
-            <h2>Renu Mishra</h2>
-            <p class="role">Assistant Professor at GL Bajaj</p>
-            <p class="status">Official Title: World’s Best Bhabhi 👑</p>
-          </div>
-        </div>
+    <!-- Intro -->
+    <section class="section">
+        <h2>But then...</h2>
+        <p>What is this?</p>
+        <p>Who is this for?</p>
+    </section>
 
-        <div class="profile-grid">
-          <div class="info-box">
-            <h4>Known As</h4>
-            <p>Renu Bhabhi, Renu Ji, Renu Queen</p>
-          </div>
-          <div class="info-box">
-            <h4>Hometown</h4>
-            <p>Tilousa, Banda</p>
-          </div>
-          <div class="info-box">
-            <h4>Favorite Color</h4>
-            <p>Black 🖤</p>
-          </div>
-          <div class="info-box">
-            <h4>Favorite Sip</h4>
-            <p>Sprite 🥤</p>
-          </div>
-          <div class="info-box">
-            <h4>Signature Lines</h4>
-            <p>“Hmm”, “Pagal”, “Arrey”, “Take care”</p>
-          </div>
-          <div class="info-box">
-            <h4>Legendary Line</h4>
-            <p>“So jao abhi chup chap.”</p>
-          </div>
-          <div class="info-box">
-            <h4>Care Level</h4>
-            <p>Infinite ♾️</p>
-          </div>
-          <div class="info-box">
-            <h4>Emotional Distance</h4>
-            <p>0 KM ❤️</p>
-          </div>
-        </div>
+    <!-- Reveal -->
+    <section class="section">
+        <h1>This is for...</h1>
+        <h2>You.</h2>
+        <h2>Yes, YOU.</h2>
+        <h1 class="highlight">Shashank Mishra</h1>
+    </section>
 
-        <div class="profile-bottom">
-          <p>
-            Some people stay as conversations.  
-            Some stay as memories.  
-            <span>But very few become a place of comfort.</span>
-          </p>
-        </div>
+    <!-- Instruction -->
+    <section class="section">
+        <p>Initializing surprise...</p>
+        <p>Please don’t close this.</p>
+        <p>Just scroll.</p>
+        <p>This is something I made… only for you.</p>
+    </section>
 
-        <button class="btn primary" onclick="goToScreen(5)">Next Surprise</button>
-      </div>
-    </div>
-  </section>
+    <!-- Emotion Build -->
+    <section class="section">
+        <p>We don’t always say things directly…</p>
+        <p>But some bonds don’t need daily words.</p>
+        <p>They just exist… strong… silent… real.</p>
+    </section>
 
-  <!-- Screen 5: Trailer -->
-  <section class="screen" id="screen5">
-    <div class="card trailer-card">
-      <p class="small-head">TRAILER MODE ACTIVATED</p>
-      <h2>This is not the surprise...</h2>
-      <h1>This is only the trailer.</h1>
+    <!-- Respect -->
+    <section class="section">
+        <p>You were never just a brother.</p>
+        <p>You were someone I observed silently.</p>
+        <p>The way you handle things.</p>
+        <p>The way you stay <span class="highlight">strong</span>.</p>
+        <p>That teaches more than words ever could.</p>
+    </section>
 
-      <div class="big-statement">
-        <p><span>7 DAYS.</span></p>
-        <p><span>7 UNEXPECTED SURPRISES.</span></p>
-        <p><span>ONLY FOR YOU.</span></p>
-      </div>
+    <!-- 🎭 TEASING -->
+    <section class="section">
+        <p>Waise ek baat bolu…</p>
+        <p>You are special.</p>
+        <p>But not THAT special 😌</p>
+        <p>Because…</p>
+        <p>Now someone else has that position.</p>
+        <h2 class="highlight">My Bhabhi 👀</h2>
+    </section>
 
-      <p class="trailer-desc">
-        From today... every evening at exactly <strong>7:00 PM</strong>...  
-        a new surprise will unlock.
-      </p>
+    <section class="section">
+        <p>Comparing priorities...</p>
+        <p>Loading...</p>
+        <h2 class="highlight">Result: Bhabhi &gt; You 😌</h2>
+    </section>
 
-      <div class="lock-card">
-        <h3>DAY 1</h3>
-        <p id="dayStatus">LOCKED 🔒</p>
-      </div>
+    <!-- Back to Emotion -->
+    <section class="section">
+        <p>But jokes apart…</p>
+        <p>Nothing changes.</p>
+        <p>You’ll always be important to me.</p>
+    </section>
 
-      <button class="btn secondary" onclick="goToScreen(6)">I'm Ready</button>
-    </div>
-  </section>
+    <!-- Memories -->
+    <section class="section">
+        <p>We don’t have many photos together…</p>
+        <p>But that doesn’t mean there are no memories.</p>
+        <p>Small moments.</p>
+        <p>Random talks.</p>
+        <p>Real ones.</p>
+    </section>
 
-  <!-- Screen 6: Final -->
-  <section class="screen" id="screen6">
-    <div class="card final-card">
-      <p class="small-head">MISSION: BEST BHABHI</p>
-      <h1>Day 1 begins at 7:00 PM</h1>
-      <p class="dramatic-line">No one was informed.</p>
-      <p class="dramatic-line">No warning was given.</p>
-      <p class="dramatic-line">No escape is possible. 😌</p>
+    <!-- Unsaid -->
+    <section class="section">
+        <p>There are things I never said.</p>
+        <h2>I respect you.</h2>
+        <h2>I notice you.</h2>
+        <h2>I’m proud of you.</h2>
+    </section>
 
-      <div class="final-message">
-        <p id="finalTyped"></p>
-      </div>
+    <!-- Final Message -->
+    <section class="section">
+        <p>This is not a project.</p>
+        <p>This is just something I wanted you to feel.</p>
+    </section>
 
-      <p class="credit">
-        Designed by heart for her bhabhi by <span>Swayam</span>
-      </p>
-    </div>
-  </section>
+    <section class="section">
+        <p>No reason.</p>
+        <p>No occasion.</p>
+        <p>Just… you.</p>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Signature -->
+    <section class="section">
+        <h2>— Swayam</h2>
+    </section>
+
+    <!-- Ending -->
+    <section class="section">
+        <h3>End of File.</h3>
+        <p>But not the bond.</p>
+    </section>
+
+</main>
+
+<!-- Link JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
