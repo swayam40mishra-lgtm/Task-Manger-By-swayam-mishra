@@ -1,60 +1,188 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0D1117" />
-  <meta name="description" content="Muskan — a minimal premium personal app by Swayam." />
-  <title>Muskan</title>  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />  <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0D1117">
+    <meta name="description" content="Muskan - Built around you.">
+
+    <title>Muskan</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar" aria-label="App greeting">
-      <p class="app-brand">MUSKAN</p>
-      <h1 class="greeting">
-        Good Evening,<br />
-        Muskan.
-      </h1>
-    </header><main class="home-grid" aria-label="Muskan modules">
-  <section class="module-card" aria-labelledby="muskan-ai-title">
-    <div class="module-icon" aria-hidden="true">🤖</div>
-    <div class="module-copy">
-      <h2 id="muskan-ai-title" class="module-title">MUSKAN AI</h2>
-    </div>
-    <a class="module-action" href="#" id="open-ai-module" aria-label="Open AI Module">Open AI Module →</a>
-  </section>
 
-  <section class="module-card" aria-labelledby="swayam-tracker-title">
-    <div class="module-icon" aria-hidden="true">🛰️</div>
-    <div class="module-copy">
-      <h2 id="swayam-tracker-title" class="module-title">SWAYAM TRACKER</h2>
-    </div>
-    <a class="module-action" href="#" id="open-tracker-module" aria-label="Open Tracker Module">Open Tracker Module →</a>
-  </section>
+    <main class="container">
 
-  <section class="module-card" aria-labelledby="quiet-mode-title">
-    <div class="module-icon" aria-hidden="true">🌙</div>
-    <div class="module-copy">
-      <h2 id="quiet-mode-title" class="module-title">QUIET MODE</h2>
-    </div>
-    <a class="module-action" href="#" id="open-quiet-mode" aria-label="Open Quiet Mode">Open Quiet Mode →</a>
-  </section>
+        <!-- Hero Section -->
 
-  <section class="module-card module-card-emergency" aria-labelledby="muskan-shield-title">
-    <div class="module-icon" aria-hidden="true">🛡️</div>
-    <div class="module-copy">
-      <h2 id="muskan-shield-title" class="module-title">MUSKAN SHIELD</h2>
-    </div>
-    <a class="module-action module-action-emergency" href="#" id="open-shield-module" aria-label="Open Shield Module">Open Shield Module →</a>
-  </section>
-</main>
+        <section class="hero">
 
-<footer class="footer" aria-label="App footer">
-  <p>Built by Swayam.</p>
-</footer>
+            <h2 id="greeting">
+                Good Evening
+            </h2>
 
-  </div>
+            <h1>
+                Muskan
+            </h1>
+
+            <p class="hero-tagline">
+                Built around you.
+            </p>
+
+        </section>
+
+        <!-- Identity Section -->
+
+        <section class="identity">
+
+            <p>
+                A small space made just for you.
+            </p>
+
+        </section>
+
+        <!-- Divider -->
+
+        <div class="divider"></div>
+
+        <!-- Today Section -->
+
+        <section class="today">
+
+            <span class="section-label">
+                TODAY
+            </span>
+
+            <p>
+                Take your time.
+                Everything inside this app will be right here whenever you need it.
+            </p>
+
+        </section>
+
+        <!-- Modules Section -->
+
+        <section class="modules">
+
+            <span class="section-label">
+                MODULES
+            </span>
+
+            <!-- Muskan AI -->
+
+            <article class="module-card">
+
+                <div class="module-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    MUSKAN AI
+                </h3>
+
+                <a href="#" id="open-ai-module" class="module-button">
+                    Open AI Module →
+                </a>
+
+            </article>
+
+            <!-- Swayam Tracker -->
+
+            <article class="module-card">
+
+                <div class="module-icon">
+                    🛰️
+                </div>
+
+                <h3>
+                    SWAYAM TRACKER
+                </h3>
+
+                <a href="#" id="open-tracker-module" class="module-button">
+                    Open Tracker Module →
+                </a>
+
+            </article>
+
+            <!-- Quiet Mode -->
+
+            <article class="module-card">
+
+                <div class="module-icon">
+                    🌙
+                </div>
+
+                <h3>
+                    QUIET MODE
+                </h3>
+
+                <a href="#" id="open-quiet-mode" class="module-button">
+                    Open Quiet Mode →
+                </a>
+
+            </article>
+
+            <!-- Muskan Shield -->
+
+            <article class="module-card shield-card">
+
+                <div class="module-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    MUSKAN SHIELD
+                </h3>
+
+                <a href="#" id="open-shield-module" class="module-button">
+                    Open Shield Module →
+                </a>
+
+            </article>
+
+        </section>
+
+        <!-- Closing Note -->
+
+        <section class="closing-note">
+
+            <p>
+                Made with intention.
+                Designed to support, not distract.
+            </p>
+
+        </section>
+
+        <!-- Creator Section -->
+
+        <section class="creator">
+
+            <span class="section-label">
+                DESIGNED BY SWAYAM
+            </span>
+
+            <p>
+                Every module inside this application was created specifically for Muskan.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Built by Swayam.
+        </p>
+
+    </footer>
+
+    <script src="js/app.js"></script>
+
 </body>
 </html>
