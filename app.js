@@ -79,3 +79,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+/* =========================
+   MUSKAN SHIELD
+   ========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const shieldBtn = document.getElementById("shield-btn");
+    const shieldResponse = document.getElementById("shield-response");
+
+    if (shieldBtn && shieldResponse) {
+
+        shieldBtn.addEventListener("click", () => {
+
+            shieldBtn.innerHTML = `
+                <span class="shield-icon">
+                    ✓
+                </span>
+
+                <span class="shield-text">
+                    ALERT<br>
+                    SENT
+                </span>
+            `;
+
+            shieldBtn.disabled = true;
+
+            shieldResponse.innerHTML = `
+                <p>
+                    <strong>Swayam has been alerted.</strong>
+                    <br><br>
+                    Your current location and device status have been prepared for sharing.
+                    <br><br>
+                    If possible, move to a safe place.
+                    Stay calm.
+                    <br><br>
+                    Help is on the way.
+                </p>
+            `;
+
+        });
+
+    }
+
+});
+            
