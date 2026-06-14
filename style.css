@@ -611,3 +611,217 @@ footer p{
     }
 
 }
+
+/* =========================
+   QUIET MODE
+   ========================= */
+
+.quiet-container{
+
+    width:100%;
+    max-width:360px;
+
+    margin:0 auto;
+
+    padding:35px 18px 60px;
+
+}
+
+/* HERO */
+
+.quiet-hero{
+
+    text-align:center;
+
+    margin-top:25px;
+    margin-bottom:55px;
+
+}
+
+.quiet-hero h1{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    line-height:1.05;
+
+    letter-spacing:1px;
+
+    margin-bottom:16px;
+
+}
+
+.quiet-hero p{
+
+    color:var(--muted);
+
+    font-size:0.88rem;
+
+    line-height:1.8;
+
+}
+
+/* BUTTON SECTION */
+
+.quiet-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+    margin-bottom:45px;
+
+}
+
+/* BUTTON */
+
+.quiet-button{
+
+    width:82%;
+
+    margin:0 auto;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:22px 16px;
+
+    text-align:center;
+
+    transition:0.25s;
+
+}
+
+.quiet-button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.quiet-icon{
+
+    display:block;
+
+    font-size:1.6rem;
+
+    margin-bottom:10px;
+
+}
+
+.quiet-text{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text);
+
+    font-size:0.92rem;
+
+    font-weight:600;
+
+    letter-spacing:0.5px;
+
+}
+
+/* MUSKAN AI BOX */
+
+.muskan-ai-box{
+
+    width:88%;
+
+    margin:0 auto;
+
+    background:var(--card);
+
+    border:1px solid rgba(212,175,55,0.15);
+
+    border-radius:22px;
+
+    padding:20px;
+
+    text-align:left;
+
+}
+
+.ai-label{
+
+    display:block;
+
+    color:var(--gold);
+
+    font-size:0.7rem;
+
+    letter-spacing:2px;
+
+    font-weight:600;
+
+    margin-bottom:14px;
+
+}
+
+#ai-response p{
+
+    color:var(--muted);
+
+    font-size:0.88rem;
+
+    line-height:1.9;
+
+}
+
+/* FOOTER */
+
+.quiet-footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+.quiet-footer p{
+
+    color:var(--muted);
+
+    font-size:0.72rem;
+
+    opacity:0.75;
+
+}
+
+/* MOBILE */
+
+@media (max-width:400px){
+
+    .quiet-container{
+
+        padding:28px 16px 50px;
+
+    }
+
+    .quiet-hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .quiet-button{
+
+        width:88%;
+
+    }
+
+}
