@@ -1,149 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0D1117" />
+  <meta name="description" content="Muskan — a minimal premium personal app by Swayam." />
+  <title>Muskan</title>  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
 </head>
-
 <body>
+  <div class="app-shell">
+    <header class="topbar" aria-label="App greeting">
+      <p class="app-brand">MUSKAN</p>
+      <h1 class="greeting">
+        Good Evening,<br />
+        Muskan.
+      </h1>
+    </header><main class="home-grid" aria-label="Muskan modules">
+  <section class="module-card" aria-labelledby="muskan-ai-title">
+    <div class="module-icon" aria-hidden="true">🤖</div>
+    <div class="module-copy">
+      <h2 id="muskan-ai-title" class="module-title">MUSKAN AI</h2>
+    </div>
+    <a class="module-action" href="#" id="open-ai-module" aria-label="Open AI Module">Open AI Module →</a>
+  </section>
 
-<!-- 🎬 LANDING -->
-<section class="center" id="landing">
-    <h1>Class 11th Project</h1>
-    <p>Digital Presentation</p>
-    <p>By Swayam Mishra</p>
-    <button onclick="startProject()">Open Project</button>
-</section>
+  <section class="module-card" aria-labelledby="swayam-tracker-title">
+    <div class="module-icon" aria-hidden="true">🛰️</div>
+    <div class="module-copy">
+      <h2 id="swayam-tracker-title" class="module-title">SWAYAM TRACKER</h2>
+    </div>
+    <a class="module-action" href="#" id="open-tracker-module" aria-label="Open Tracker Module">Open Tracker Module →</a>
+  </section>
 
-<!-- 🎬 LOADING -->
-<section class="center hidden" id="loading">
-    <h2 id="loadingText">Loading...</h2>
-</section>
+  <section class="module-card" aria-labelledby="quiet-mode-title">
+    <div class="module-icon" aria-hidden="true">🌙</div>
+    <div class="module-copy">
+      <h2 id="quiet-mode-title" class="module-title">QUIET MODE</h2>
+    </div>
+    <a class="module-action" href="#" id="open-quiet-mode" aria-label="Open Quiet Mode">Open Quiet Mode →</a>
+  </section>
 
-<!-- 🎬 ERROR -->
-<section class="center hidden" id="error">
-    <h2 class="glitch">ERROR 404</h2>
-    <p class="glitch">Project Not Found</p>
-    <p class="glitch">System Failure...</p>
-
-    <h3 class="red-text">This was never a project.</h3>
-
-    <button onclick="reveal()">Continue</button>
-</section>
-
-<!-- 🎬 MAIN STORY -->
-<main id="main" class="hidden">
-
-    <!-- Intro -->
-    <section class="section">
-        <h2>But then...</h2>
-        <p>What is this?</p>
-        <p>Who is this for?</p>
-    </section>
-
-    <!-- Reveal -->
-    <section class="section">
-        <h1>This is for...</h1>
-        <h2>You.</h2>
-        <h2>Yes, YOU.</h2>
-        <h1 class="highlight">Shashank Mishra</h1>
-    </section>
-
-    <!-- Instruction -->
-    <section class="section">
-        <p>Initializing surprise...</p>
-        <p>Please don’t close this.</p>
-        <p>Just scroll.</p>
-        <p>This is something I made… only for you.</p>
-    </section>
-
-    <!-- Emotion Build -->
-    <section class="section">
-        <p>We don’t always say things directly…</p>
-        <p>But some bonds don’t need daily words.</p>
-        <p>They just exist… strong… silent… real.</p>
-    </section>
-
-    <!-- Respect -->
-    <section class="section">
-        <p>You were never just a brother.</p>
-        <p>You were someone I observed silently.</p>
-        <p>The way you handle things.</p>
-        <p>The way you stay <span class="highlight">strong</span>.</p>
-        <p>That teaches more than words ever could.</p>
-    </section>
-
-    <!-- 🎭 TEASING -->
-    <section class="section">
-        <p>Waise ek baat bolu…</p>
-        <p>You are special.</p>
-        <p>But not THAT special 😌</p>
-        <p>Because…</p>
-        <p>Now someone else has that position.</p>
-        <h2 class="highlight">My Bhabhi 👀</h2>
-    </section>
-
-    <section class="section">
-        <p>Comparing priorities...</p>
-        <p>Loading...</p>
-        <h2 class="highlight">Result: Bhabhi &gt; You 😌</h2>
-    </section>
-
-    <!-- Back to Emotion -->
-    <section class="section">
-        <p>But jokes apart…</p>
-        <p>Nothing changes.</p>
-        <p>You’ll always be important to me.</p>
-    </section>
-
-    <!-- Memories -->
-    <section class="section">
-        <p>We don’t have many photos together…</p>
-        <p>But that doesn’t mean there are no memories.</p>
-        <p>Small moments.</p>
-        <p>Random talks.</p>
-        <p>Real ones.</p>
-    </section>
-
-    <!-- Unsaid -->
-    <section class="section">
-        <p>There are things I never said.</p>
-        <h2>I respect you.</h2>
-        <h2>I notice you.</h2>
-        <h2>I’m proud of you.</h2>
-    </section>
-
-    <!-- Final Message -->
-    <section class="section">
-        <p>This is not a project.</p>
-        <p>This is just something I wanted you to feel.</p>
-    </section>
-
-    <section class="section">
-        <p>No reason.</p>
-        <p>No occasion.</p>
-        <p>Just… you.</p>
-    </section>
-
-    <!-- Signature -->
-    <section class="section">
-        <h2>— Swayam</h2>
-    </section>
-
-    <!-- Ending -->
-    <section class="section">
-        <h3>End of File.</h3>
-        <p>But not the bond.</p>
-    </section>
-
+  <section class="module-card module-card-emergency" aria-labelledby="muskan-shield-title">
+    <div class="module-icon" aria-hidden="true">🛡️</div>
+    <div class="module-copy">
+      <h2 id="muskan-shield-title" class="module-title">MUSKAN SHIELD</h2>
+    </div>
+    <a class="module-action module-action-emergency" href="#" id="open-shield-module" aria-label="Open Shield Module">Open Shield Module →</a>
+  </section>
 </main>
 
-<!-- Link JS -->
-<script src="script.js"></script>
+<footer class="footer" aria-label="App footer">
+  <p>Built by Swayam.</p>
+</footer>
 
+  </div>
 </body>
 </html>
