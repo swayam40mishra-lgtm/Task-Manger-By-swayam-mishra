@@ -382,3 +382,232 @@ footer p{
     }
 
 }
+
+
+/* =========================
+   SWAYAM TRACKER
+   ========================= */
+
+.tracker-container{
+
+    width:100%;
+    max-width:360px;
+
+    margin:0 auto;
+
+    padding:30px 18px 60px;
+
+}
+
+/* HERO */
+
+.tracker-hero{
+
+    text-align:center;
+
+    margin-top:20px;
+    margin-bottom:50px;
+
+}
+
+.tracker-hero h1{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    line-height:1.05;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+
+}
+
+.tracker-hero p{
+
+    color:var(--muted);
+
+    font-size:0.85rem;
+
+}
+
+/* CARD */
+
+.tracker-card{
+
+    width:100%;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:16px;
+
+    margin-bottom:20px;
+
+}
+
+/* LABEL */
+
+.tracker-label{
+
+    display:block;
+
+    color:var(--gold);
+
+    font-size:0.65rem;
+
+    letter-spacing:2.5px;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+}
+
+/* HEADINGS */
+
+.tracker-card h2{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1.15rem;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+}
+
+/* PARAGRAPH */
+
+.tracker-card p{
+
+    color:var(--muted);
+
+    font-size:0.88rem;
+
+    line-height:1.7;
+
+}
+
+/* QUICK INFO */
+
+.quick-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+.info-box{
+
+    flex:1;
+
+    text-align:center;
+
+    padding:10px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.03);
+
+}
+
+.info-box h3{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1rem;
+
+    margin-bottom:6px;
+
+}
+
+.info-box p{
+
+    font-size:0.72rem;
+
+    color:var(--muted);
+
+}
+
+/* MISSION */
+
+.mission-list{
+
+    list-style:none;
+
+}
+
+.mission-list li{
+
+    position:relative;
+
+    padding-left:18px;
+
+    margin-bottom:10px;
+
+    color:var(--text);
+
+    font-size:0.88rem;
+
+}
+
+.mission-list li::before{
+
+    content:"•";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--gold);
+
+}
+
+/* FOOTER */
+
+.tracker-footer{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+.tracker-footer p{
+
+    color:var(--muted);
+
+    font-size:0.72rem;
+
+    opacity:0.75;
+
+}
+
+/* MOBILE */
+
+@media (max-width:400px){
+
+    .tracker-container{
+
+        padding:24px 16px 50px;
+
+    }
+
+    .tracker-hero h1{
+
+        font-size:2.1rem;
+
+    }
+
+}
