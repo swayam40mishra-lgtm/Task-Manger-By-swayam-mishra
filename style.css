@@ -825,3 +825,239 @@ footer p{
     }
 
 }
+
+/* =========================
+   MUSKAN SHIELD
+   ========================= */
+
+.shield-container{
+
+    width:100%;
+    max-width:360px;
+
+    margin:0 auto;
+
+    padding:35px 18px 60px;
+
+}
+
+/* HERO */
+
+.shield-hero{
+
+    text-align:center;
+
+    margin-top:25px;
+    margin-bottom:55px;
+
+}
+
+.shield-hero h1{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    line-height:1.05;
+
+    letter-spacing:1px;
+
+    margin-bottom:14px;
+
+}
+
+.shield-hero p{
+
+    color:var(--muted);
+
+    font-size:0.88rem;
+
+    line-height:1.8;
+
+}
+
+/* ACTION */
+
+.shield-action{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+
+}
+
+/* MAIN BUTTON */
+
+.shield-button{
+
+    width:220px;
+    height:220px;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+    background:rgba(229,57,53,0.12);
+
+    border:2px solid rgba(229,57,53,0.45);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:0.25s;
+
+}
+
+.shield-button:hover{
+
+    transform:scale(1.02);
+
+}
+
+.shield-icon{
+
+    font-size:2.8rem;
+
+    margin-bottom:10px;
+
+}
+
+.shield-text{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    line-height:1.4;
+
+    text-align:center;
+
+}
+
+/* INFO */
+
+.shield-info{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.shield-info p{
+
+    color:var(--muted);
+
+    font-size:0.84rem;
+
+    line-height:1.8;
+
+}
+
+/* MUSKAN AI */
+
+.shield-ai-box{
+
+    width:88%;
+
+    margin:0 auto;
+
+    background:var(--card);
+
+    border:1px solid rgba(229,57,53,0.20);
+
+    border-radius:22px;
+
+    padding:20px;
+
+}
+
+.shield-ai-label{
+
+    display:block;
+
+    color:var(--red);
+
+    font-size:0.7rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:14px;
+
+}
+
+#shield-response p{
+
+    color:var(--muted);
+
+    font-size:0.88rem;
+
+    line-height:1.9;
+
+}
+
+/* FOOTER */
+
+.shield-footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+}
+
+.shield-footer p{
+
+    color:var(--muted);
+
+    font-size:0.72rem;
+
+    opacity:0.75;
+
+}
+
+/* MOBILE */
+
+@media (max-width:400px){
+
+    .shield-container{
+
+        padding:28px 16px 50px;
+
+    }
+
+    .shield-hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .shield-button{
+
+        width:190px;
+        height:190px;
+
+    }
+
+}
