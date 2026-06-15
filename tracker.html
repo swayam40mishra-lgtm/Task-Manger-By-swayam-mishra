@@ -20,7 +20,7 @@
 
     <main class="tracker-container">
 
-        <!-- Header -->
+        <!-- Hero -->
 
         <section class="tracker-hero">
 
@@ -43,13 +43,13 @@
                 CURRENT STATUS
             </span>
 
-            <h2>
-                Editing ETHOS
+            <h2 id="tracker-status">
+                Loading...
             </h2>
 
         </section>
 
-        <!-- Personal Message -->
+        <!-- Message -->
 
         <section class="tracker-card">
 
@@ -57,9 +57,8 @@
                 MESSAGE
             </span>
 
-            <p>
-                Working on today's video.
-                Reply may be slow.
+            <p id="tracker-message">
+                Loading...
             </p>
 
         </section>
@@ -76,25 +75,37 @@
 
                 <div class="info-box">
 
-                    <h3>72%</h3>
+                    <h3 id="tracker-battery">
+                        --
+                    </h3>
 
-                    <p>Battery</p>
-
-                </div>
-
-                <div class="info-box">
-
-                    <h3>2m</h3>
-
-                    <p>Last Seen</p>
+                    <p>
+                        Battery
+                    </p>
 
                 </div>
 
                 <div class="info-box">
 
-                    <h3>84 km</h3>
+                    <h3 id="tracker-lastseen">
+                        --
+                    </h3>
 
-                    <p>Distance</p>
+                    <p>
+                        Last Seen
+                    </p>
+
+                </div>
+
+                <div class="info-box">
+
+                    <h3 id="tracker-distance">
+                        --
+                    </h3>
+
+                    <p>
+                        Distance
+                    </p>
 
                 </div>
 
@@ -110,7 +121,7 @@
                 NEXT FREE TIME
             </span>
 
-            <h2>
+            <h2 id="tracker-nextfree">
                 Around 2:00 AM
             </h2>
 
@@ -127,16 +138,14 @@
             <ul class="mission-list">
 
                 <li>Finish ETHOS Video</li>
-
                 <li>Read Newspaper</li>
-
                 <li>UPSC Revision</li>
 
             </ul>
 
         </section>
 
-        <!-- Thought Of The Day -->
+        <!-- Thought -->
 
         <section class="tracker-card">
 
@@ -150,7 +159,7 @@
 
         </section>
 
-        <!-- Footer Note -->
+        <!-- Footer -->
 
         <section class="tracker-footer">
 
@@ -162,7 +171,8 @@
 
     </main>
 
-    <script src="../js/app.js"></script>
+    <script type="module" src="tracker-firebase.js"></script>
+    <script src="app.js"></script>
 
 </body>
 </html>
