@@ -372,7 +372,35 @@ p, li, span {
     backdrop-filter: blur(18px);
 }
 
-.maker-photo {
+.maker-photo{
+
+    width:130px;
+    height:130px;
+
+    margin:0 auto 24px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:3px solid rgba(212,175,55,0.35);
+
+    box-shadow:
+        0 0 30px rgba(212,175,55,0.12),
+        0 0 60px rgba(212,175,55,0.06);
+
+}
+
+.maker-photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
  
 
 .maker-card h2 {
