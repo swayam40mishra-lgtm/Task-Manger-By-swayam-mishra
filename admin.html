@@ -1,67 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-</head>
-<body>
+    <title>Muskan Admin Panel</title><link rel="stylesheet" href="admin.css">
 
-    <h1>Tracker Admin</h1>
+</head><body><main class="admin-container">
 
-    <input id="status" placeholder="Status"><br><br>
+    <h1>Muskan Admin</h1>
 
-    <input id="message" placeholder="Message"><br><br>
+    <!-- TRACKER CONTROLS -->
 
-    <input id="battery" placeholder="Battery"><br><br>
+    <section class="admin-card">
 
-    <input id="distance" placeholder="Distance"><br><br>
+        <h2>Tracker Controls</h2>
 
-    <input id="lastseen" placeholder="Last Seen"><br><br>
+        <input
+            id="status"
+            placeholder="Current Status">
 
-    <button id="save-btn">
-        Save Tracker
-    </button>
-    <section class="admin-section"><h2>Tracker Controls</h2>
+        <textarea
+            id="message"
+            placeholder="Current Message"></textarea>
 
-<input id="status" placeholder="Status">
+        <input
+            id="battery"
+            type="number"
+            placeholder="Battery %">
 
-<textarea id="message"
-    placeholder="Message"></textarea>
+        <input
+            id="distance"
+            placeholder="Distance">
 
-<input id="battery" placeholder="Battery %">
+        <input
+            id="lastseen"
+            placeholder="Last Seen">
 
-<input id="distance" placeholder="Distance">
+        <input
+            id="nextfree"
+            placeholder="Next Free Time">
 
-<input id="nextfree" placeholder="Next Free Time">
+    </section>
 
-<button id="save-btn">
-    Save Tracker
-</button>
 
-</section><section class="admin-section"><h2>Quiet Mode Alerts</h2>
+    <!-- TODAY'S MISSION -->
 
-<div id="quiet-alert">
-    No Active Alert
-</div>
+    <section class="admin-card">
 
-<div id="quiet-time">
-    --
-</div>
+        <h2>Today's Mission</h2>
 
-</section><section class="admin-section"><h2>Shield Alerts</h2>
+        <input
+            id="mission1"
+            placeholder="Mission 1">
 
-<div id="shield-alert">
-    No Emergency Alert
-</div>
+        <input
+            id="mission2"
+            placeholder="Mission 2">
 
-<div id="shield-time">
-    --
-</div>
+        <input
+            id="mission3"
+            placeholder="Mission 3">
 
-</section>
+    </section>
 
-    <script type="module" src="admin.js"></script>
 
-</body>
-      </html>
+    <!-- THOUGHT OF THE DAY -->
+
+    <section class="admin-card">
+
+        <h2>Thought Of The Day</h2>
+
+        <textarea
+            id="thought"
+            placeholder="Write today's thought"></textarea>
+
+    </section>
+
+
+    <!-- QUIET MODE MONITOR -->
+
+    <section class="admin-card">
+
+        <h2>Quiet Mode</h2>
+
+        <div id="quiet-alert">
+            No Active Alert
+        </div>
+
+        <div id="quiet-time">
+            --
+        </div>
+
+    </section>
+
+
+    <!-- SHIELD MONITOR -->
+
+    <section class="admin-card">
+
+        <h2>Shield Alerts</h2>
+
+        <div id="shield-alert">
+            No Emergency Alert
+        </div>
+
+        <div id="shield-time">
+            --
+        </div>
+
+    </section>
+
+
+    <!-- SAVE -->
+
+    <section class="admin-card">
+
+        <button id="save-btn">
+            Save Changes
+        </button>
+
+    </section>
+
+</main>
+
+<script type="module" src="admin.js"></script>
+
+</body></html>
