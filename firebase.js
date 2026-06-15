@@ -1,0 +1,18 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "muskan-651cb.firebaseapp.com",
+  projectId: "muskan-651cb",
+  storageBucket: "muskan-651cb.firebasestorage.app",
+  messagingSenderId: "1032658969016",
+  appId: "1:1032658969016:web:59fc6a1514708bf5d3af4d"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+export { db };
