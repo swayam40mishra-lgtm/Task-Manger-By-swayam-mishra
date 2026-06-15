@@ -1,46 +1,20 @@
-import { db } from "./firebase.js";
+import { doc, updateDoc } from "firebase/firestore";
 
-import {
-    doc,
-    updateDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const shieldRef = doc(db, "shield", "current");
 
-document.addEventListener("DOMContentLoaded", () => {
+document.getElementById("shield-btn").addEventListener("click", async () => {
+    console.log("CLICK WORKING");
 
-    const shieldBtn = document.getElementById("shield-btn");
+    try {
+        await updateDoc(shieldRef, {
+            status: "active",
+            updatedAt: new Date()
+        });
 
-    if (!shieldBtn) return;
+        alert("Updated successfully ❤️");
 
-    shieldBtn.addEventListener("click", async () => {
-
-        try {
-
-            alert("Button Click Detected");
-
-            const shieldRef = doc(db, "shield", "current");
-
-            await updateDoc(shieldRef, {
-
-                active: true,
-                time: new Date().toLocaleString(),
-                message: "Emergency Alert Triggered"
-
-            });
-
-            alert("Firebase Updated");
-
-            console.log("Shield Alert Sent");
-
-        }
-
-        catch(error) {
-
-            alert("ERROR: " + error.message);
-
-            console.error(error);
-
-        }
-
-    });
-
+    } catch (err) {
+        console.error("Error:", err.message);
+        alert("Error: " + err.message);
+    }
 });
