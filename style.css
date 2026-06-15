@@ -24,7 +24,13 @@
     --quiet-accent: #B8A0E8;
     --shield-accent: #C44B67;
 }
-
+.module-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
 /* =========================
    RESET
    ========================= */
