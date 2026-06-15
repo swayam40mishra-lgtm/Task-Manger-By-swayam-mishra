@@ -18,13 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             await updateDoc(quietRef, {
 
-                active: true,
-                type: type,
-                time: new Date().toLocaleString()
+    active: true,
+    type: "TEST",
+    time: "HELLO"
 
-            });
+});
 
-            console.log("Quiet Mode Alert Sent");
+alert("Firebase write completed");
+
+  
+
+          console.log("Quiet Mode Alert Sent");
 
         }
 
