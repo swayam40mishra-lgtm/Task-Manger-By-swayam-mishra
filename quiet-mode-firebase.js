@@ -1,6 +1,5 @@
-
 import { db } from "./firebase.js";
-alert("quiet-mode-firebase loaded");
+
 import {
     doc,
     updateDoc
@@ -19,24 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
             await updateDoc(quietRef, {
 
-    active: true,
-    type: "TEST",
-    time: "HELLO"
+                active: true,
+                type: type,
+                time: new Date().toLocaleString()
 
-});
+            });
 
-alert("Firebase write completed");
+            console.log("Quiet Mode Alert Sent");
 
         }
 
-          catch(error) {
+        catch(error) {
 
-    alert("ERROR: " + error.message);
+            alert("ERROR: " + error.message);
 
-    console.error(error);
+            console.error(error);
 
-}
-      
+        }
 
     }
 
