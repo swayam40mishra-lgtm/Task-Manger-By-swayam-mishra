@@ -27,17 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 alert("Firebase write completed");
 
-  
-
-          console.log("Quiet Mode Alert Sent");
-
         }
 
-        catch(error) {
+          catch(error) {
 
-            console.error(error);
+    alert("ERROR: " + error.message);
 
-        }
+    console.error(error);
+
+}
+      
 
     }
 
