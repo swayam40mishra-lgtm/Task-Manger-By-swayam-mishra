@@ -343,73 +343,64 @@ p, li, span {
 
 .shield-card .module-button:hover {
     background: rgba(196, 75, 103, 0.12);
-}
 
-.closing-note {
-    text-align: center;
-    margin-top: 36px;
 }
-
-.closing-note p {
-    color: var(--muted);
-    font-size: 0.92rem;
-}
+/* =========================
+   ABOUT THE MAKER (FIXED)
+   ========================= */
 
 .maker {
     margin-top: 34px;
+    text-align: center;
 }
 
 .maker-card {
     width: 100%;
-    padding: 24px 20px;
+    padding: 26px 20px;
     border-radius: 30px;
     text-align: center;
+
     background:
         radial-gradient(circle at top, rgba(214, 167, 122, 0.12), transparent 36%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.028));
+
     border: 1px solid rgba(214, 167, 122, 0.14);
     box-shadow: var(--shadow-soft);
     backdrop-filter: blur(18px);
 }
 
-.maker-photo{
+/* PROFILE IMAGE */
+.maker-photo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
 
-    width:130px;
-    height:130px;
+    border-radius: 50%;
+    overflow: hidden;
 
-    margin:0 auto 24px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    border:3px solid rgba(212,175,55,0.35);
+    border: 3px solid rgba(212, 175, 55, 0.35);
 
     box-shadow:
-        0 0 30px rgba(212,175,55,0.12),
-        0 0 60px rgba(212,175,55,0.06);
-
+        0 0 30px rgba(212, 175, 55, 0.12),
+        0 0 60px rgba(212, 175, 55, 0.06);
 }
 
-.maker-photo img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
+.maker-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
- 
 
-.maker-card h2 {
-    font-size: clamp(2rem, 6.5vw, 2.8rem);
-    line-height: 1;
-    margin-bottom: 8px;
+/* NAME */
+.maker-name {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    line-height: 1.1;
+    margin-bottom: 6px;
     color: var(--text);
 }
 
+/* ROLE */
 .maker-role {
     font-family: 'Manrope', sans-serif;
     font-size: 0.78rem;
@@ -417,32 +408,27 @@ p, li, span {
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--home-accent);
-    margi.maker-photo{
-
-    width:130px;
-    height:130px;
-
-    margin:0 auto 24px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    border:3px solid rgba(212,175,55,0.35);
-
-    box-shadow:
-        0 0 30px rgba(212,175,55,0.12),
-        0 0 60px rgba(212,175,55,0.06);
-
-                                            }n-bottom: 16px;
+    margin-bottom: 14px;
 }
 
+/* DESCRIPTION */
 .maker-description {
     color: var(--muted);
     font-size: 0.94rem;
-    max-width: 34ch;
+    line-height: 1.9;
+    max-width: 36ch;
     margin: 0 auto;
 }
+
+/* CLOSING TEXT FIX */
+.closing-text {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+   }
+
 
 footer.premium-footer {
     width: 100%;
