@@ -1,176 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D1117">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0D1117">
+<title>Swayam Tracker</title>
 
-    <title>Swayam Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body><main class="tracker-container">
 
-    <main class="tracker-container">
+    <!-- Hero -->
 
-        <!-- Hero -->
+    <section class="tracker-hero">
 
-        <section class="tracker-hero">
+        <h1>
+            SWAYAM<br>
+            TRACKER
+        </h1>
 
-            <h1>
-                SWAYAM<br>
-                TRACKER
-            </h1>
+        <p>
+            Live status and updates.
+        </p>
 
-            <p>
-                Live status and updates.
-            </p>
+    </section>
 
-        </section>
+    <!-- Current Status -->
 
-        <!-- Current Status -->
+    <section class="tracker-card">
 
-        <section class="tracker-card">
+        <span class="tracker-label">
+            CURRENT STATUS
+        </span>
 
-            <span class="tracker-label">
-                CURRENT STATUS
-            </span>
+        <h2 id="tracker-status">
+            Loading...
+        </h2>
 
-            <h2 id="tracker-status">
-                Loading...
-            </h2>
+    </section>
 
-        </section>
+    <!-- Message -->
 
-        <!-- Message -->
+    <section class="tracker-card">
 
-        <section class="tracker-card">
+        <span class="tracker-label">
+            MESSAGE
+        </span>
 
-            <span class="tracker-label">
-                MESSAGE
-            </span>
+        <p id="tracker-message">
+            Loading...
+        </p>
 
-            <p id="tracker-message">
-                Loading...
-            </p>
+    </section>
 
-        </section>
+    <!-- Quick Info -->
 
-        <!-- Quick Info -->
+    <section class="tracker-card">
 
-        <section class="tracker-card">
+        <span class="tracker-label">
+            QUICK INFO
+        </span>
 
-            <span class="tracker-label">
-                QUICK INFO
-            </span>
+        <div class="quick-info">
 
-            <div class="quick-info">
+            <div class="info-box">
 
-                <div class="info-box">
+                <h3 id="tracker-battery">
+                    --
+                </h3>
 
-                    <h3 id="tracker-battery">
-                        --
-                    </h3>
-
-                    <p>
-                        Battery
-                    </p>
-
-                </div>
-
-                <div class="info-box">
-
-                    <h3 id="tracker-lastseen">
-                        --
-                    </h3>
-
-                    <p>
-                        Last Seen
-                    </p>
-
-                </div>
-
-                <div class="info-box">
-
-                  <h3 id="distance-value">7 km</h3>  
-
-                    <p>
-                        Distance
-                    </p>
-
-                </div>
+                <p>
+                    Battery
+                </p>
 
             </div>
 
-        </section>
+            <div class="info-box">
 
-        <!-- Next Free Time -->
+                <h3 id="tracker-lastseen">
+                    --
+                </h3>
 
-        <section class="tracker-card">
+                <p>
+                    Last Seen
+                </p>
 
-            <span class="tracker-label">
-                NEXT FREE TIME
-            </span>
+            </div>
 
-            <h2 id="tracker-nextfree">
-                Around 2:00 AM
-            </h2>
+            <div class="info-box">
 
-        </section>
+                <h3 id="tracker-distance">
+                    --
+                </h3>
 
-        <!-- Today's Missi<h3 id="distance-value">--</h3>on -->
+                <p>
+                    Distance
+                </p>
 
-        <section class="tracker-card">
+            </div>
 
-            <span class="tracker-label">
-                TODAY'S MISSION
-            </span>
+        </div>
 
-            <ul class="mission-list">
+    </section>
 
-                <li>Finish ETHOS Video</li>
-                <li>Read Newspaper</li>
-                <li>UPSC Revision</li>
+    <!-- Next Free Time -->
 
-            </ul>
+    <section class="tracker-card">
 
-        </section>
+        <span class="tracker-label">
+            NEXT FREE TIME
+        </span>
 
-        <!-- Thought -->
+        <h2 id="tracker-nextfree">
+            Loading...
+        </h2>
 
-        <section class="tracker-card">
+    </section>
 
-            <span class="tracker-label">
-                THOUGHT OF THE DAY
-            </span>
+    <!-- Today's Mission -->
 
-            <p>
-                One day we'll look back and realize this phase built us.
-            </p>
+    <section class="tracker-card">
 
-        </section>
+        <span class="tracker-label">
+            TODAY'S MISSION
+        </span>
 
-        <!-- Footer -->
+        <ul class="mission-list">
 
-        <section class="tracker-footer">
+            <li id="mission1">
+                Loading...
+            </li>
 
-            <p>
-                Last updated automatically.
-            </p>
+            <li id="mission2">
+                Loading...
+            </li>
 
-        </section>
+            <li id="mission3">
+                Loading...
+            </li>
 
-    </main>
+        </ul>
 
-    <script type="module" src="tracker-firebase.js"></script>
-    <script src="app.js"></script>
+    </section>
+
+    <!-- Thought -->
+
+    <section class="tracker-card">
+
+        <span class="tracker-label">
+            THOUGHT OF THE DAY
+        </span>
+
+        <p id="tracker-thought">
+            Loading...
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <section class="tracker-footer">
+
+        <p>
+            Last updated automatically.
+        </p>
+
+    </section>
+
+</main>
+
+<script type="module" src="tracker-firebase.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
