@@ -3,16 +3,18 @@ import {
     doc,
     setDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 const shieldRef = doc(db, "shield", "current");
 
 document.getElementById("shield-btn").addEventListener("click", async () => {
     console.log("CLICK WORKING");
 
     try {
-        await updateDoc(shieldRef, {
+        await setDoc(shieldRef, {
             status: "active",
-            updatedAt: new Date()
-        });
+            updatedAt: new Date(),
+            message: "Emergency Alert Triggered"
+        }, { merge: true });
 
         alert("Updated successfully ❤️");
 
