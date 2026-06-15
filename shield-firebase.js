@@ -7,8 +7,6 @@ import {
 const shieldRef = doc(db, "shield", "current");
 
 document.getElementById("shield-btn").addEventListener("click", async () => {
-    console.log("CLICK WORKING");
-
     try {
         await setDoc(shieldRef, {
             status: "active",
@@ -16,10 +14,7 @@ document.getElementById("shield-btn").addEventListener("click", async () => {
             message: "Emergency Alert Triggered"
         }, { merge: true });
 
-  
-
     } catch (err) {
-        console.error("Error:", err.message);
-        alert("Error: " + err.message);
+        console.error("Firestore Error:", err.message);
     }
 });
