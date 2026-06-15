@@ -123,29 +123,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-            
-async function sendQuietMode(type) {
+         
 
-    try {
-
-        const quietRef = doc(db, "quietMode", "current");
-
-        await updateDoc(quietRef, {
-
-            active: true,
-            type: type,
-            time: new Date().toLocaleString()
-
-        });
-
-        console.log("Quiet Mode Alert Sent");
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-    }
-
-}
