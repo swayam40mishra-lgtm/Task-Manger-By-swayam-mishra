@@ -373,22 +373,7 @@ p, li, span {
 }
 
 .maker-photo {
-    width: 112px;
-    height: 112px;
-    margin: 0 auto 18px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    letter-spacing: 0.08em;
-    color: #fff;
-    background:
-        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.22), transparent 35%),
-        linear-gradient(180deg, #3A2A2D 0%, #1D1418 100%);
-    border: 1px solid rgba(214, 167, 122, 0.22);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
-}
+ 
 
 .maker-card h2 {
     font-size: clamp(2rem, 6.5vw, 2.8rem);
@@ -404,7 +389,24 @@ p, li, span {
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--home-accent);
-    margin-bottom: 16px;
+    margi.maker-photo{
+
+    width:130px;
+    height:130px;
+
+    margin:0 auto 24px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:3px solid rgba(212,175,55,0.35);
+
+    box-shadow:
+        0 0 30px rgba(212,175,55,0.12),
+        0 0 60px rgba(212,175,55,0.06);
+
+                                            }n-bottom: 16px;
 }
 
 .maker-description {
