@@ -16,7 +16,7 @@ document.getElementById("shield-btn").addEventListener("click", async () => {
             message: "Emergency Alert Triggered"
         }, { merge: true });
 
-        alert("Updated successfully ❤️");
+  
 
     } catch (err) {
         console.error("Error:", err.message);
