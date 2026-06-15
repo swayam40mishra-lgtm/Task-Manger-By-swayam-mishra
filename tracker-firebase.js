@@ -2,13 +2,6 @@ import { db } from "./firebase.js";
 
 import {
     doc,
-    updateDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-import { db } from "./firebase.js";
-
-import {
-    doc,
     getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -23,12 +16,13 @@ async function loadTrackerData() {
         if (!docSnap.exists()) {
 
             console.log("Tracker document not found");
-
             return;
 
         }
 
         const data = docSnap.data();
+
+        console.log(data);
 
         document.getElementById("tracker-status").textContent =
             data.status || "Unavailable";
@@ -37,19 +31,19 @@ async function loadTrackerData() {
             data.message || "Unavailable";
 
         document.getElementById("tracker-battery").textContent =
-            data.battery + "%" || "--";
+            data.battery ? data.battery + "%" : "--";
 
         document.getElementById("tracker-distance").textContent =
             data.distance || "--";
 
         document.getElementById("tracker-lastseen").textContent =
-            data.lastSeen || data["last seen"] || "--";
+            data["last seen"] || "--";
 
     }
 
     catch (error) {
 
-        console.error("Firebase Error:", error);
+        console.error("Tracker Error:", error);
 
     }
 
