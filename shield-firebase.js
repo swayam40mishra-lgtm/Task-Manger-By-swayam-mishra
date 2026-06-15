@@ -1,5 +1,8 @@
-import { doc, updateDoc } from "firebase/firestore";
-
+import { db } from "./firebase.js";
+import {
+    doc,
+    setDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const shieldRef = doc(db, "shield", "current");
 
 document.getElementById("shield-btn").addEventListener("click", async () => {
