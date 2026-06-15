@@ -2,194 +2,83 @@ import { db } from "./firebase.js";
 
 import {
     doc,
-    getDoc,
-    updateDoc,
-    onSnapshot
+    getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-/* =========================
-   REFERENCES
-   ========================= */
-
-const trackerRef = doc(db, "tracker", "live");
-
-const quietRef = doc(db, "quietMode", "current");
-
-const shieldRef = doc(db, "shield", "current");
-
-/* =========================
-   LOAD TRACKER DATA
-   ========================= */
 
 async function loadTrackerData() {
 
     try {
 
-        const snap = await getDoc(trackerRef);
+        const docRef = doc(db, "tracker", "live");
 
-        if (!snap.exists()) return;
+        const docSnap = await getDoc(docRef);
 
-        const data = snap.data();
+        if (!docSnap.exists()) {
 
-        document.getElementById("status").value =
-            data.status || "";
+            console.log("Tracker document not found");
 
-        document.getElementById("message").value =
-            data.message || "";
+            return;
 
-        document.getElementById("battery").value =
-            data.battery || "";
+        }
 
-        document.getElementById("distance").value =
-            data.distance || "";
+        const data = docSnap.data();
 
-        document.getElementById("lastseen").value =
-            data.lastSeen || "";
+        console.log(data);
 
-        document.getElementById("nextfree").value =
-            data.nextFree || "";
+        /* STATUS */
 
-        document.getElementById("mission1").value =
-            data.missions?.[0] || "";
+        document.getElementById("tracker-status").textContent =
+            data.status || "Unavailable";
 
-        document.getElementById("mission2").value =
-            data.missions?.[1] || "";
+        /* MESSAGE */
 
-        document.getElementById("mission3").value =
-            data.missions?.[2] || "";
+        document.getElementById("tracker-message").textContent =
+            data.message || "Unavailable";
 
-        document.getElementById("thought").value =
-            data.thought || "";
+        /* BATTERY */
 
-    } catch (error) {
+        document.getElementById("tracker-battery").textContent =
+            data.battery ? data.battery + "%" : "--";
 
-        console.error("Load Error:", error);
+        /* DISTANCE */
+
+        document.getElementById("tracker-distance").textContent =
+            data.distance || "--";
+
+        /* LAST SEEN */
+
+        document.getElementById("tracker-lastseen").textContent =
+            data.lastSeen || "--";
+
+        /* NEXT FREE TIME */
+
+        document.getElementById("tracker-nextfree").textContent =
+            data.nextFree || "--";
+
+        /* MISSIONS */
+
+        document.getElementById("mission1").textContent =
+            data.missions?.[0] || "--";
+
+        document.getElementById("mission2").textContent =
+            data.missions?.[1] || "--";
+
+        document.getElementById("mission3").textContent =
+            data.missions?.[2] || "--";
+
+        /* THOUGHT */
+
+        document.getElementById("tracker-thought").textContent =
+            data.thought || "--";
+
+    }
+
+    catch (error) {
+
+        console.error("Tracker Error:", error);
 
     }
 
 }
 
 loadTrackerData();
-
-/* =========================
-   SAVE TRACKER DATA
-   ========================= */
-
-const saveBtn = document.getElementById("save-btn");
-
-saveBtn.addEventListener("click", async () => {
-
-    try {
-
-        const now = new Date().toLocaleString();
-
-        await updateDoc(trackerRef, {
-
-            status:
-                document.getElementById("status").value,
-
-            message:
-                document.getElementById("message").value,
-
-            battery:
-                Number(
-                    document.getElementById("battery").value
-                ),
-
-            distance:
-                document.getElementById("distance").value,
-
-            nextFree:
-                document.getElementById("nextfree").value,
-
-            lastSeen:
-                now,
-
-            missions: [
-
-                document.getElementById("mission1").value,
-
-                document.getElementById("mission2").value,
-
-                document.getElementById("mission3").value
-
-            ],
-
-            thought:
-                document.getElementById("thought").value
-
-        });
-
-        document.getElementById("lastseen").value = now;
-
-        alert("Tracker Updated Successfully");
-
-    } catch (error) {
-
-        console.error(error);
-
-        alert("Update Failed");
-
-    }
-
-});
-
-/* =========================
-   QUIET MODE REALTIME
-   ========================= */
-
-onSnapshot(quietRef, (snap) => {
-
-    if (!snap.exists()) return;
-
-    const data = snap.data();
-
-    if (data.active) {
-
-        document.getElementById("quiet-alert").textContent =
-            data.type || "Unknown";
-
-        document.getElementById("quiet-time").textContent =
-            data.time || "--";
-
-    } else {
-
-        document.getElementById("quiet-alert").textContent =
-            "No Active Alert";
-
-        document.getElementById("quiet-time").textContent =
-            "--";
-
-    }
-
-});
-
-/* =========================
-   SHIELD REALTIME
-   ========================= */
-
-onSnapshot(shieldRef, (snap) => {
-
-    if (!snap.exists()) return;
-
-    const data = snap.data();
-
-    if (data.status === "active") {
-
-        document.getElementById("shield-alert").textContent =
-            data.message || "Emergency Alert";
-
-        document.getElementById("shield-time").textContent =
-            data.updatedAt || "--";
-
-    } else {
-
-        document.getElementById("shield-alert").textContent =
-            "No Emergency Alert";
-
-        document.getElementById("shield-time").textContent =
-            "--";
-
-    }
-
-});
