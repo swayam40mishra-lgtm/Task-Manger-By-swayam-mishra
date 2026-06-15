@@ -7,13 +7,21 @@ import {
     onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const trackerRef = doc(db, "tracker", "live");
-
 /* =========================
-   LOAD EXISTING DATA
+   REFERENCES
    ========================= */
 
-async function loadData() {
+const trackerRef = doc(db, "tracker", "live");
+
+const quietRef = doc(db, "quietMode", "current");
+
+const shieldRef = doc(db, "shield", "current");
+
+/* =========================
+   LOAD TRACKER DATA
+   ========================= */
+
+async function loadTrackerData() {
 
     try {
 
@@ -61,10 +69,10 @@ async function loadData() {
 
 }
 
-loadData();
+loadTrackerData();
 
 /* =========================
-   SAVE DATA
+   SAVE TRACKER DATA
    ========================= */
 
 const saveBtn = document.getElementById("save-btn");
@@ -72,6 +80,8 @@ const saveBtn = document.getElementById("save-btn");
 saveBtn.addEventListener("click", async () => {
 
     try {
+
+        const now = new Date().toLocaleString();
 
         await updateDoc(trackerRef, {
 
@@ -89,11 +99,11 @@ saveBtn.addEventListener("click", async () => {
             distance:
                 document.getElementById("distance").value,
 
-            lastSeen:
-                new Date().toLocaleString(),
-
             nextFree:
                 document.getElementById("nextfree").value,
+
+            lastSeen:
+                now,
 
             missions: [
 
@@ -110,14 +120,11 @@ saveBtn.addEventListener("click", async () => {
 
         });
 
+        document.getElementById("lastseen").value = now;
+
         alert("Tracker Updated Successfully");
 
-        document.getElementById("lastseen").value =
-            new Date().toLocaleString();
-
-    }
-
-    catch (error) {
+    } catch (error) {
 
         console.error(error);
 
@@ -128,24 +135,22 @@ saveBtn.addEventListener("click", async () => {
 });
 
 /* =========================
-   REALTIME ALERT MONITOR
+   QUIET MODE REALTIME
    ========================= */
 
-onSnapshot(trackerRef, (snap) => {
+onSnapshot(quietRef, (snap) => {
 
     if (!snap.exists()) return;
 
     const data = snap.data();
 
-    /* Quiet Alert */
-
-    if (data.quietAlert?.type) {
+    if (data.active) {
 
         document.getElementById("quiet-alert").textContent =
-            data.quietAlert.type;
+            data.type || "Unknown";
 
         document.getElementById("quiet-time").textContent =
-            data.quietAlert.time || "--";
+            data.time || "--";
 
     } else {
 
@@ -157,15 +162,25 @@ onSnapshot(trackerRef, (snap) => {
 
     }
 
-    /* Shield Alert */
+});
 
-    if (data.shieldAlert?.active) {
+/* =========================
+   SHIELD REALTIME
+   ========================= */
+
+onSnapshot(shieldRef, (snap) => {
+
+    if (!snap.exists()) return;
+
+    const data = snap.data();
+
+    if (data.status === "active") {
 
         document.getElementById("shield-alert").textContent =
-            "⚠️ Emergency Active";
+            data.message || "Emergency Alert";
 
         document.getElementById("shield-time").textContent =
-            data.shieldAlert.time || "--";
+            data.updatedAt || "--";
 
     } else {
 
