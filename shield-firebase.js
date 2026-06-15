@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
+            alert("Button Click Detected");
+
             const shieldRef = doc(db, "shield", "current");
 
             await updateDoc(shieldRef, {
@@ -25,11 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
+            alert("Firebase Updated");
+
             console.log("Shield Alert Sent");
 
         }
 
         catch(error) {
+
+            alert("ERROR: " + error.message);
 
             console.error(error);
 
