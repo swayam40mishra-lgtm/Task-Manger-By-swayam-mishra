@@ -1,9 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyDUguCeGfZzOUp6myEhqXLoiQbTj-ItqhM",
   authDomain: "muskan-651cb.firebaseapp.com",
   projectId: "muskan-651cb",
   storageBucket: "muskan-651cb.firebasestorage.app",
@@ -12,7 +11,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 const db = getFirestore(app);
 
 export { db };
