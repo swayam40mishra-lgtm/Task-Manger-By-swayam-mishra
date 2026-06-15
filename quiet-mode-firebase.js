@@ -1,5 +1,6 @@
-import { db } from "./firebase.js";
 
+import { db } from "./firebase.js";
+alert("quiet-mode-firebase loaded");
 import {
     doc,
     updateDoc
