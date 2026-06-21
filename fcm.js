@@ -28,10 +28,28 @@ async function registerDevice() {
 
         }
 
-        const token = await getToken(messaging, {
-            vapidKey: "BCQIAayDGD72lriPU7UXuE8TGyIM_mK_n6Ah4tbKW9QRIWazAGjipY8UdWqec6jiWF5zUtOQR0ckCU4CKadTLeQ"
-        });
+        const permission = await Notification.requestPermission();
 
+if (permission !== "granted") {
+    console.log("Notification permission denied");
+    return;
+}
+
+const registration = await navigator.serviceWorker.register(
+    "/firebase-messaging-sw.js"
+);
+
+console.log("Firebase SW Registered");
+
+const token = await getToken(
+    messaging,
+    {
+        vapidKey: "BCQIAayDGD72lriPU7UXuE8TGyIM_mK_n6Ah4tbKW9QRIWazAGjipY8UdWqec6jiWF5zUtOQR0ckCU4CKadTLeQ",
+        serviceWorkerRegistration: registration
+    }
+);
+
+console.log("FCM TOKEN:", token);
         alert("TOKEN GENERATED");
 
         console.log("FCM TOKEN:", token);
