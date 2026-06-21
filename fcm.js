@@ -13,21 +13,26 @@ async function registerDevice() {
 
     try {
 
+        alert("FCM STARTED");
+
+        alert("Current Permission: " + Notification.permission);
+
         const permission = await Notification.requestPermission();
+
+        alert("After Request: " + permission);
 
         if (permission !== "granted") {
 
-            console.log("Notification permission denied");
-
+            alert("Permission not granted");
             return;
 
         }
 
         const token = await getToken(messaging, {
-
             vapidKey: "BCQIAayDGD72lriPU7UXuE8TGyIM_mK_n6Ah4tbKW9QRIWazAGjipY8UdWqec6jiWF5zUtOQR0ckCU4CKadTLeQ"
-
         });
+
+        alert("TOKEN GENERATED");
 
         console.log("FCM TOKEN:", token);
 
@@ -39,10 +44,13 @@ async function registerDevice() {
             }
         );
 
+        alert("SAVED TO FIRESTORE");
+
     }
 
     catch (error) {
 
+        alert("ERROR: " + error.message);
         console.error(error);
 
     }
@@ -50,3 +58,4 @@ async function registerDevice() {
 }
 
 registerDevice();
+
